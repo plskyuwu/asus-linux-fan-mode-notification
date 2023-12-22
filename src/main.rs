@@ -6,8 +6,6 @@ fn main() {
 
     let modes: [&str; 3] = ["Silent", "Balanced", "Boost"];
 
-    let wait: time::Duration = time::Duration::from_secs(1);
-
     let mut previous_mode: usize = fs::read_to_string(file_path)
         .expect("Should have been able to read the file")
         .trim()
@@ -32,6 +30,6 @@ fn main() {
         }
         previous_mode = fan_mode;
 
-        thread::sleep(wait);
+        thread::sleep(time::Duration::from_secs(1));
     }
 }
