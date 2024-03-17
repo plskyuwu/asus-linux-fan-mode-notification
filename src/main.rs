@@ -2,7 +2,7 @@ use std::{fs, thread, time};
 use notify_rust::Notification;
 
 fn main() {
-    let modes: [&str; 3] = ["Boost", "Balanced", "Silent"];
+    let modes: [&str; 3] = ["Balanced", "Boost", "Silent"];
     let mut previous_mode: usize = get_mode();
 
     loop {
