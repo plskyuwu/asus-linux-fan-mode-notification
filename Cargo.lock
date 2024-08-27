@@ -12,8 +12,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "asus_fan_mode_display"
-version = "0.1.0"
+name = "asus-linux-fan-mode-notification"
+version = "0.1.1"
 dependencies = [
  "notify-rust",
 ]
