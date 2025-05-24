@@ -3,10 +3,10 @@ use std::{fs, thread, time};
 
 fn main() {
     let modes: [&str; 3] = ["Balanced", "Boost", "Silent"];
-    let mut previous_mode: u8 = get_mode();
+    let mut previous_mode: usize = get_mode();
 
     loop {
-        let fan_mode: u8 = get_mode();
+        let fan_mode: usize = get_mode();
 
         if fan_mode != previous_mode {
             println!("Current mode: {}", modes[fan_mode]);
@@ -21,13 +21,13 @@ fn main() {
     }
 }
 
-fn get_mode() -> u8 {
+fn get_mode() -> usize {
     let file_path: &str = "/sys/devices/platform/asus-nb-wmi/fan_boost_mode";
 
     fs::read_to_string(file_path)
         .expect("Error reading file")
         .trim()
         .to_string()
-        .parse::<u8>()
+        .parse::<usize>()
         .unwrap()
 }
